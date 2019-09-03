@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Gavin Mu&#241;oz</title>
+		  <link rel="stylesheet" type="text/css" href="css/portfolio.css">
+		  <script src="js/portfolio.js"></script>
+		  <script src="js/jquery-3.4.1.js"></script> <!-- We use a little bit of jQuery on this site now -->
+	</head>
+
+<!-- Body -->
+<body class="Background"> 
+
+<!-- Navbar -->
+	<div class="Navbar">
+		<a class="active" href="#Home">Home</a> 
+		<a href="#Slideshow">Slideshow</a> <!-- This is a new section -->
+		<a href="#About">About</a>
+		<a href="#Projects">Projects</a>
+		<a onclick="openForm()">Contact</a> <!-- This makes it so that our openForm function runs when we click Contact on the nav bar -->
+	</div>
+
+<!-- This allows us to close the form when we click outside the nav bar or contact form -->
+<div class="btn cancel" onclick="closeForm()">
+
+<!-- Home -->
+	<div id="Home">
+		<br> <!-- Breaks inserted to add space between navbar and first heading -->
+		<br>
+		
+<!-- Video -->
+		<video autoplay muted loop id="TitleVideo"> <!-- Makes the video play automatically, on a loop and with no sound -->
+			<source src="css/video/titleVideo.mp4" type="video/mp4">
+			Your browser does not support HTML5 video. <!-- Display message if video fails to run -->
+		</video>
+	</div>
+
+<!-- Video text --> 
+	<div class="Video_Text"> 
+		<h1 style="color:white;">Gavin Mu&#241;oz</h1>
+			<p> 
+			  <strong>
+					<center>
+						My name is Gavin Mu&#241;oz. Welcome to my portfolio website. On it, I will tell you about my background and experience.<br>
+						<br>Thank you for stopping by and enjoy! 
+					</center>	
+			  </strong>				
+			</p> 
+	</div>
+
+<!-- Slideshow section -->
+  <div id="Slideshow">
+    <div id="Slideshow_Background"> 
+      <div id="Slideshow_Container">
+        
+		<div class="mySlides fade">
+          <div class="Slide_Number">1 / 5</div>
+            <img class="Slide_Show_Images" src="css/images/personalEzio.jpg" style="width:100%">
+              <div class="text">I'm available to assist you on your project!</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="Slide_Number">2 / 5</div>
+            <img class="Slide_Show_Images" src="css/images/personalCierra.jpg" style="width:100%">
+              <div class="text">My girlfriend and I during Christmas</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="Slide_Number">3 / 5</div>
+            <img class="Slide_Show_Images" src="css/images/personalAWE.jpg" style="width:100%">
+              <div class="text">AWE 2019</div>
+        </div>
+
+		<div class="mySlides fade">
+	      <div class="Slide_Number">4 / 5</div>
+			<img class="Slide_Show_Images" src="css/images/EzioDaisy.jpg" style="width:100%">
+              <div class="text">Our dogs Ezio and Daisy</div>
+			</div>
+
+		<div class="mySlides fade">
+		  <div class="Slide_Number">5 / 5</div>
+			<img class="Slide_Show_Images" src="css/images/puppyMail.jpg" style="width:100%">
+			  <div class="text"> 
+				<a onclick="openForm()" href="#Contact" style="color:white;">Contact me now!</a>
+			  </div>
+	    </div>
+	
+		  <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+		  <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+		
+	  </div>
+  <br>
+
+      <div style="text-align:center">
+ 
+		<span class="dot" onclick="currentSlide(1)"></span> 
+		<span class="dot" onclick="currentSlide(2)"></span> 
+		<span class="dot" onclick="currentSlide(3)"></span> 
+		<span class="dot" onclick="currentSlide(4)"></span> 
+		<span class="dot" onclick="currentSlide(5)"></span> 
+
+      </div>
+    </div>
+  </div>
+
+<!-- We included our JS function within this file to ensure it was given precedence, this function covers the slideshow -->
+  <script>
+    var slideIndex = 1;
+	  showSlides(slideIndex);
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) {slideIndex = 1}    
+		if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		  }
+	  slides[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " active";
+	}
+  </script>
+
+<!-- About section -->
+  <div class="Row" id="About"> 
+	<div class="Column_2"> <!-- Left column -->
+	  <img src="css/images/personal.jpg" alt="PAWS Logo">
+	</div>
+  
+	<div class="Column_1"> <!-- Right column -->
+	  <h1>About</h2>
+	    <p>I am a software developer with the United States Air Force.  
+			I am an experienced Interactive Multimedia Developer with a demonstrated history of working in the Defense & Space industry. 
+			Skilled in Unity, Adobe Animate, MicrosoftProducts, Public Speaking, Java, and Management. 
+			Strong engineering professional with a Bachelor's degree focused in IT Management from Trident University International. 
+		</p>
+	</div>
+  </div>
+
+<!-- Projects section -->
+	<div class="Row" id="Projects">
+		<div class="Column_1"> <!-- Left column -->
+			<h1>Projects</h1>
+			<p>You can view my coding projects on my GitHub profile here: <a href="https://github.com/GavinMunoz" target="_blank">GitHub</a></p>
+			<p>You can view my Linkedin profile here: <a href="https://www.linkedin.com/in/gavin-munoz" target="_blank">LinkedIn</a></p>
+			<p>You can view my resume here: <a href="css/documents/resume.pdf" target="_blank">Resume</a></p>
+			<p>To watch a video of one of my Virtual Reality projects please choose from the following:</p><br>			
+			<li><a onclick="Play360RoomVideo()">360 Room</a></li>
+			<li><a onclick="PlayCookieRoomVideo()">Cookie Room</a></li>
+			<li>VR Tutorial</li>
+		</div>
+		
+		<div class="Column_2"> <!-- Right column -->
+			<div id="ThreeSixtyVideo">
+				<video controls muted width="720px" height="480px" id="ThreeSixtyVid" onended="VideoOver()"> <!-- Makes the video play automatically, on a loop and with no sound -->
+					<source src="css/video/360_Room.mp4" type="video/mp4">
+					Your browser does not support HTML5 video. <!-- Display message if video fails to run -->
+				</video>
+			</div>
+			<div id="CookieVideo">
+				<video controls muted width="720px" height="480px" id="CookieVid" onended="VideoOver()"> <!-- Makes the video play automatically, on a loop and with no sound -->
+					<source src="css/video/Cookie_Room.mp4" type="video/mp4">
+					Your browser does not support HTML5 video. <!-- Display message if video fails to run -->
+				</video>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Contact section -->
+  <div id="Contact"> 
+    <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
+	  <div class="form-popup" id="myForm">
+	    <form action="https://formspree.io/gavin.e.munoz@gmail.com" method="POST" class="form-container"> <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
+		<h1>Contact</h1>
+			<label for="name"><b>Name</b></label>
+			  <input type="text" placeholder="Type your name here" name="name" required>
+			<label for="phone"><b>Phone</b></label>
+			  <input type="text" placeholder="Enter your phone number here" name="phone">
+			<label for="email"><b>Email</b></label>		
+			  <input type="text" placeholder="Type your email address here" name="email" required>
+			<label for="message"><b>Message</b></label>
+			  <input type="text" placeholder="Type your message here" name="message">
+ 
+    <button type="submit" class="btn">SUBMIT</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+	    </form>
+	  </div>
+  </div>
+	
+<!-- Footer section -->	
+	<footer>
+	  <p>
+	    <center>Gavin Mu&#241;oz</a></center><br>
+      </p>
+	</footer>
+
+</body>
+</html>
