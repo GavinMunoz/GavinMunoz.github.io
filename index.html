@@ -65,7 +65,7 @@
         <div class="mySlides fade">
           <div class="Slide_Number">2 / 5</div>
             <img class="Slide_Show_Images" src="css/images/personalCierra.jpg" style="width:100%">
-              <div class="text">My girlfriend and I during Christmas</div>
+              <div class="text">My wife and I during Christmas</div>
         </div>
 
         <div class="mySlides fade">
@@ -77,7 +77,7 @@
 		<div class="mySlides fade">
 	      <div class="Slide_Number">4 / 5</div>
 			<img class="Slide_Show_Images" src="css/images/EzioDaisy.jpg" style="width:100%">
-              <div class="text">Our dogs Ezio and Daisy</div>
+              <div class="text">Our dogs Ezio, Daisy, and Laxus</div>
 			</div>
 
 		<div class="mySlides fade">
@@ -142,8 +142,9 @@
 	<div class="Column_1"> <!-- Right column -->
 	  <h1>About</h2>
 	    <p>I am a software developer with the United States Air Force.  
-			I am an experienced Interactive Multimedia Developer with a demonstrated history of working in the Defense & Space industry. 
-			Skilled in Unity, Adobe Animate, MicrosoftProducts, Public Speaking, Java, and Management. 
+			I am an experienced Interactive Multimedia Supervisor with a demonstrated history of working in the Defense & Space industry.
+		    	I currently manage multiple Virtual Reality Applications with a 4 man team.
+			Skilled in Unity, Sketchup, Adobe Animate, MicrosoftProducts, Public Speaking, Java, and Management. 
 			Strong engineering professional with a Bachelor's degree focused in IT Management from Trident University International. 
 		</p>
 	</div>
@@ -157,12 +158,18 @@
 			<p>You can view my Linkedin profile here: <a href="https://www.linkedin.com/in/gavin-munoz" target="_blank">LinkedIn</a></p>
 			<p>You can view my resume here: <a href="css/documents/resume.pdf" target="_blank">Resume</a></p>
 			<p>To watch a video of one of my Virtual Reality projects please choose from the following:</p><br>			
+			<li><a onclick="PlayThorVideo()">Thor Simulator</a></li>
 			<li><a onclick="Play360RoomVideo()">360 Room</a></li>
 			<li><a onclick="PlayCookieRoomVideo()">Cookie Room</a></li>
-			<li>VR Tutorial</li>
 		</div>
 		
 		<div class="Column_2"> <!-- Right column -->
+			<div id="ThorVideo">
+				<video controls muted width="720px" height="480px" id="ThorVid" onended="VideoOver()"> <!-- Makes the video play automatically, on a loop and with no sound -->
+					<source src="css/video/Thor_Simulator.mp4" type="video/mp4">
+					Your browser does not support HTML5 video. <!-- Display message if video fails to run -->
+				</video>
+			</div>
 			<div id="ThreeSixtyVideo">
 				<video controls muted width="720px" height="480px" id="ThreeSixtyVid" onended="VideoOver()"> <!-- Makes the video play automatically, on a loop and with no sound -->
 					<source src="css/video/360_Room.mp4" type="video/mp4">
