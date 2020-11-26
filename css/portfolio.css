@@ -104,7 +104,7 @@ body.fade-out {
 	animation: zoominoutsinglefeatured 5s;
 }
 
-#ThreeSixtyVideo, #CookieVideo {
+#ThorVideo, #ThreeSixtyVideo, #CookieVideo {
   display: none;
   margin: 0 auto;
   text-align: center;
