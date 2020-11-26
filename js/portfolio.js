@@ -40,14 +40,24 @@ function closeForm() {
   this.Close();
 }
 
-function Play360RoomVideo() {
+function PlayThorVideo() {
 	document.getElementById("CookieVideo").style.display = "none";
-  document.getElementById("ThreeSixtyVideo").style.display = "block";
+	document.getElementById("ThreeSixtyVideo").style.display = "none";
+  	document.getElementById("ThorVideo").style.display = "block";
+	document.getElementById("ThorVid").currentTime = 0;
+	document.getElementById("ThorVid").play();
+}
+
+function Play360RoomVideo() {
+	document.getElementById("ThorVideo").style.display = "none";
+	document.getElementById("CookieVideo").style.display = "none";
+  	document.getElementById("ThreeSixtyVideo").style.display = "block";
 	document.getElementById("ThreeSixtyVid").currentTime = 0;
 	document.getElementById("ThreeSixtyVid").play();
 }
 
 function PlayCookieRoomVideo() {
+	document.getElementById("ThorVideo").style.display = "none";
 	document.getElementById("ThreeSixtyVideo").style.display = "none";
 	document.getElementById("CookieVideo").style.display = "block";
 	document.getElementById("CookieVid").currentTime = 0;
@@ -55,6 +65,7 @@ function PlayCookieRoomVideo() {
 }
 
 function VideoOver() {
+	document.getElementById("ThorVideo").style.display = "none";
 	document.getElementById("ThreeSixtyVideo").style.display = "none";
 	document.getElementById("CookieVideo").style.display = "none";
 }
