@@ -1,219 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gavin Munoz - AI Architect & Technology Leader</title>
+	<!-- CORRECTED PATH: Points to the css folder -->
+	<link rel="stylesheet" href="css/portfolio.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-<!-- Head -->
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Gavin Mu&#241;oz</title>
-		  <link rel="stylesheet" type="text/css" href="css/portfolio.css">
-		  <script src="js/portfolio.js"></script>
-		  <script src="js/jquery-3.4.1.js"></script> <!-- We use a little bit of jQuery on this site now -->
-	</head>
-
-<!-- Body -->
-<body class="Background"> 
-
-<!-- Navbar -->
-	<div class="Navbar">
-		<a class="active" href="#Home">Home</a> 
-		<a href="#Slideshow">Slideshow</a> <!-- This is a new section -->
-		<a href="#About">About</a>
-		<a href="#Projects">Projects</a>
-		<a onclick="openForm()">Contact</a> <!-- This makes it so that our openForm function runs when we click Contact on the nav bar -->
-	</div>
-
-<!-- This allows us to close the form when we click outside the nav bar or contact form -->
-<div class="btn cancel" onclick="closeForm()">
-
-<!-- Home -->
-	<div id="Home">
-		<br> <!-- Breaks inserted to add space between navbar and first heading -->
-		<br>
-		
-<!-- Video -->
-		<video autoplay muted loop id="TitleVideo"> <!-- Makes the video play automatically, on a loop and with no sound -->
-			<source src="css/video/titleVideo.mp4" type="video/mp4">
-			Your browser does not support HTML5 video. <!-- Display message if video fails to run -->
-		</video>
-	</div>
-
-<!-- Video text --> 
-	<div class="Video_Text"> 
-		<h1 style="color:white;">Gavin Mu&#241;oz</h1>
-			<p> 
-			  <strong>
-					<center>
-						My name is Gavin Mu&#241;oz. Welcome to my portfolio website. On it, I will tell you about my background and experience.<br>
-						<br>Thank you for stopping by and enjoy! 
-					</center>	
-			  </strong>				
-			</p> 
-	</div>
-
-<!-- Slideshow section -->
-  <div id="Slideshow">
-    <div id="Slideshow_Background"> 
-      <div id="Slideshow_Container">
-        
-		<div class="mySlides fade">
-          <div class="Slide_Number">1 / 5</div>
-            <img class="Slide_Show_Images" src="css/images/personalSymbol.png" style="width:100%">
-              <div class="text">I'm available to assist you on your project!</div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="Slide_Number">2 / 5</div>
-            <img class="Slide_Show_Images" src="css/images/personalWedding.jpg" style="width:100%">
-              <div class="text">My wife and I</div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="Slide_Number">3 / 5</div>
-            <img class="Slide_Show_Images" src="css/images/personalAWE.jpg" style="width:100%">
-              <div class="text">AWE 2019</div>
-        </div>
-
-		<div class="mySlides fade">
-	      <div class="Slide_Number">4 / 5</div>
-			<img class="Slide_Show_Images" src="css/images/personalPuppies.jpg" style="width:100%">
-              <div class="text">Our dogs Ezio, Daisy, Laxus, Brigid, and Argus</div>
-			</div>
-
-		<div class="mySlides fade">
-		  <div class="Slide_Number">5 / 5</div>
-			<img class="Slide_Show_Images" src="css/images/puppyMail.jpg" style="width:100%">
-			  <div class="text"> 
-				<a onclick="openForm()" href="#Contact" style="color:white;">Contact me now!</a>
-			  </div>
-	    </div>
-	
-		  <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
-		  <a class="Next" onclick="plusSlides(1)">&#10095;</a>
-		
-	  </div>
-  <br>
-
-      <div style="text-align:center">
- 
-		<span class="dot" onclick="currentSlide(1)"></span> 
-		<span class="dot" onclick="currentSlide(2)"></span> 
-		<span class="dot" onclick="currentSlide(3)"></span> 
-		<span class="dot" onclick="currentSlide(4)"></span> 
-		<span class="dot" onclick="currentSlide(5)"></span> 
-
-      </div>
-    </div>
-  </div>
-
-<!-- We included our JS function within this file to ensure it was given precedence, this function covers the slideshow -->
-  <script>
-    var slideIndex = 1;
-	  showSlides(slideIndex);
-	function plusSlides(n) {
-	  showSlides(slideIndex += n);
-	}
-	function currentSlide(n) {
-	  showSlides(slideIndex = n);
-	}
-	function showSlides(n) {
-	  var i;
-	  var slides = document.getElementsByClassName("mySlides");
-	  var dots = document.getElementsByClassName("dot");
-		if (n > slides.length) {slideIndex = 1}    
-		if (n < 1) {slideIndex = slides.length}
-		  for (i = 0; i < slides.length; i++) {
-		  slides[i].style.display = "none";  
-		  }
-		  for (i = 0; i < dots.length; i++) {
-			dots[i].className = dots[i].className.replace(" active", "");
-		  }
-	  slides[slideIndex-1].style.display = "block";  
-	  dots[slideIndex-1].className += " active";
-	}
-  </script>
-
-<!-- About section -->
-  <div class="Row" id="About"> 
-	<div class="Column_2"> <!-- Left column -->
-	  <img src="css/images/personal.jpg" alt="PAWS Logo">
-	</div>
-  
-	<div class="Column_1"> <!-- Right column -->
-	  <h1>About</h2>
-	    <p>I am a software developer with the United States Air Force.  
-			I am an experienced Cyber Operations Manager with a demonstrated history of working in the Defense & Space industry.
-		    	I currently work at the Headquarters Air Force Flight Standards Agency upgrading their Airfield Operations software.
-			Skilled in Agile Development for Web, Virtual and Augmented Realities, Phone Apps, and Desktop Apps. 
-			Strong engineering professional with a Bachelor's degree focused in IT Management from Trident University International.
-			Working on Master's degree in Computer Forensics from American Military University. 
-		</p>
-	</div>
-  </div>
-
-<!-- Projects section -->
-	<div class="Row" id="Projects">
-		<div class="Column_1"> <!-- Left column -->
-			<h1>Projects</h1>
-			<p>You can view my coding projects on my GitHub profile here: <a href="https://github.com/GavinMunoz" target="_blank">GitHub</a></p>
-			<p>You can view my Linkedin profile here: <a href="https://www.linkedin.com/in/gavin-munoz" target="_blank">LinkedIn</a></p>
-			<p>You can view my resume here: <a href="css/documents/resume.pdf" target="_blank">Resume</a></p>
-			<p>To watch a video of one of my Virtual Reality projects please choose from the following:</p><br>			
-			<li><a onclick="PlayThorVideo()">Thor Simulator</a></li>
-			<li><a onclick="Play360RoomVideo()">360 Room</a></li>
-			<li><a onclick="PlayCookieRoomVideo()">Cookie Room</a></li>
-		</div>
-		
-		<div class="Column_2"> <!-- Right column -->
-			<div id="ThorVideo">
-				<video controls muted width="720px" height="480px" id="ThorVid" onended="VideoOver()"> <!-- Makes the video play automatically, on a loop and with no sound -->
-					<source src="css/video/Thor_Simulator.mp4" type="video/mp4">
-					Your browser does not support HTML5 video. <!-- Display message if video fails to run -->
-				</video>
-			</div>
-			<div id="ThreeSixtyVideo">
-				<video controls muted width="720px" height="480px" id="ThreeSixtyVid" onended="VideoOver()"> <!-- Makes the video play automatically, on a loop and with no sound -->
-					<source src="css/video/360_Room.mp4" type="video/mp4">
-					Your browser does not support HTML5 video. <!-- Display message if video fails to run -->
-				</video>
-			</div>
-			<div id="CookieVideo">
-				<video controls muted width="720px" height="480px" id="CookieVid" onended="VideoOver()"> <!-- Makes the video play automatically, on a loop and with no sound -->
-					<source src="css/video/Cookie_Room.mp4" type="video/mp4">
-					Your browser does not support HTML5 video. <!-- Display message if video fails to run -->
-				</video>
+	<header class="hero">
+		<div class="container">
+			<h1 class="hero-title">Gavin Munoz</h1>
+			<p class="hero-subtitle">AI Architect | Technology Leader | Enterprise Innovator</p>
+			<div class="hero-actions">
+				<!-- YOUR_LINK_HERE: Replace with your LinkedIn URL -->
+				<a href="https://www.linkedin.com/in/gavin-munoz/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+				<!-- YOUR_LINK_HERE: Replace with your GitHub URL -->
+				<a href="https://github.com/gavinmunoz" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+				<a href="css/documents/resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
 			</div>
 		</div>
-	</div>
-</div>
+	</header>
 
-<!-- Contact section -->
-  <div id="Contact"> 
-    <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
-	  <div class="form-popup" id="myForm">
-	    <form action="https://formspree.io/gavin.e.munoz@gmail.com" method="POST" class="form-container"> <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
-		<h1>Contact</h1>
-			<label for="name"><b>Name</b></label>
-			  <input type="text" placeholder="Type your name here" name="name" required>
-			<label for="phone"><b>Phone</b></label>
-			  <input type="text" placeholder="Enter your phone number here" name="phone">
-			<label for="email"><b>Email</b></label>		
-			  <input type="text" placeholder="Type your email address here" name="email" required>
-			<label for="message"><b>Message</b></label>
-			  <input type="text" placeholder="Type your message here" name="message">
- 
-    <button type="submit" class="btn">SUBMIT</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
-	    </form>
-	  </div>
-  </div>
-	
-<!-- Footer section -->	
-	<footer>
-	  <p>
-	    <center>Gavin Mu&#241;oz</a></center><br>
-      </p>
+	<main class="main-content">
+		<div class="container">
+			<div class="section-title">
+				<h2>Project Showcase</h2>
+				<p>A selection of projects demonstrating expertise in building scalable, high-impact technology solutions.</p>
+			</div>
+
+			<div class="project-grid">
+
+				<!-- Project 1: AURA -->
+				<div class="project-card">
+					<h3 class="project-title">AURA: Reference Assistant</h3>
+					<p class="project-impact">Offline Search Engine</p>
+					<p class="project-description">Engineered a secure, standalone desktop application that transforms static libraries of PDFs into an instantly searchable knowledge base.</p>
+					<p class="project-tech"><strong>Tech Stack:</strong> Vector Databases, LLM Integration, Enterprise Security</p>
+					<div class="project-actions">
+						<a href="css/documents/aura.pdf" class="btn btn-secondary" target="_blank">Read White Paper</a>
+					</div>
+				</div>
+
+				<!-- Project 2: VR ATC Simulator -->
+				<div class="project-card">
+					<h3 class="project-title">VR Air Traffic Control Simulator</h3>
+					<p class="project-impact">Immersive Training | Proprietary AI Engine</p>
+					<p class="project-description">Developed a fully immersive ATC training simulator in VR, featuring a custom-built, proprietary voice-to-speech AI engine for unparalleled realism in a high-stakes environment.</p>
+					<p class="project-tech"><strong>Tech Stack:</strong> Unity, C#, Custom Voice AI/ML Engine</p>
+					<div class="project-actions">
+						<!-- YOUR_LINK_HERE: Replace with your YouTube Playlist URL -->
+						<a href="https://youtube.com/playlist?list=PLvMF2cUO-TYKfDfhCxi6xpmMITLq1hcMh&si=VmoMFQsSnHNdaOoH" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Watch Demo Playlist</a>
+					</div>
+				</div>
+
+				<!-- Project 3: ODIN-AOC -->
+				<div class="project-card">
+					<h3 class="project-title">ODIN-AOC: Hybrid Sovereign Intelligence</h3>
+					<p class="project-impact">Privacy-First Architecture | Full System Integration</p>
+					<p class="project-description">Architected a "Sovereign AI" engine from the ground up to bridge local-first privacy with cloud intelligence, creating a unified assistant for managing both personal and professional operational data securely.</p>
+					<p class="project-tech"><strong>Tech Stack:</strong> C#, Semantic Kernel, Gemma/Gemini (LLMs)</p>
+					<div class="project-actions">
+						<button id="odin-button" class="btn btn-secondary">View Architecture</button>
+					</div>
+				</div>
+
+			</div> <!-- /project-grid -->
+		</div> <!-- /container -->
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<p>&copy; 2026 Gavin Munoz </p>
+		</div>
 	</footer>
 
+	<!-- Odin Modal -->
+	<div id="odin-modal" class="modal">
+		<div class="modal-content-wrapper">
+			<span class="close-button">&times;</span>
+			<div class="modal-content">
+				<img src="css/images/odin_diagram.jpg" alt="ODIN-AOC Architecture Diagram">
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/portfolio.js"></script>
 </body>
 </html>
